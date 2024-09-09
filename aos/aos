@@ -14,7 +14,7 @@ for wallet in $AOS_WALLET_FILE $SCHEDULER_LOCATION_PUBLISHER_WALLET_FILE; do
 done
 
 if [ ! -f "$AOS_BIN" ]; then
-  npm install
+  pnpm install
 fi
 
 # Graphql query to Arlocal to automatically discover the AOS module tx id
@@ -76,4 +76,7 @@ export CU_URL
 export GATEWAY_URL
 export MU_URL
 export SCHEDULER
+
+echo $AOS_BIN
+echo $AOS_WALLET_FILE
 $AOS_BIN --wallet "$AOS_WALLET_FILE" "$@"
